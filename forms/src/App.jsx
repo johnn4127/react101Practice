@@ -4,8 +4,8 @@ import FoxImageFetcher from './components/FoxImageFetcher'
 function App() {
   return (
     <div>
-      {/* <Forms/> */}
-      <FoxImageFetcher/>
+      <Forms/>
+      {/* <FoxImageFetcher/> */}
     </div>
   )
 }
