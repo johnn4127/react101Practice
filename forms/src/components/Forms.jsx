@@ -25,7 +25,8 @@ const FoxForm = () => {
     setfoxImage(data.image)
 }
 
-  return <div>
+  return <div className="mainForm">
+    <h1>Foxy Foxes</h1>
     <Form onSubmit={handleSubmit}>
       <Form.Group className="mb-3" controlId="formBasicEmail">
         <Form.Label>Email address</Form.Label>
@@ -63,12 +64,12 @@ const FoxForm = () => {
         <Form.Check type="checkbox" label="Check me out" />
       </Form.Group>
 
-      <Button variant="primary" type="submit" onClick={fetchFox}>
+      <Button variant="success" type="submit" onClick={fetchFox}>
         GIVE ME A FOX BABY
       </Button>
     </Form>
     
-    <Card style={{ width: '18rem' }}>
+    <Card className="card1" style={{ width: '18rem', backgroundColor: '#4F9153', marginTop: '20px' }}>
       <Card.Img variant="top" src={foxImage} />
       <Card.Body>
         <Card.Title>Email:{email}</Card.Title>
