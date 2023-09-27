@@ -40,3 +40,10 @@
 .read-the-docs {
   color: #888;
 }
+
+.stopWatchButtons {
+  display: flex;
+  justify-content: space-between; 
+  margin-top: 20px; 
+  
+}

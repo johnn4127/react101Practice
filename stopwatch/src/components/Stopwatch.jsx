@@ -1,52 +1,45 @@
-import React, {useState, useEffect} from 'react'
-
+import React, { useState, useEffect } from "react";
+import '../App.css'
 const Stopwatch = () => {
-    const [count, setCount] = useState(0);
-    const [isActive, setisActive] = useState(false)
+  const [time, setTime] = useState(0);
+  const [isRunning, setIsRunning] = useState(false);
 
-    const startStop = ()=>{ //startStop arrow function. if isActive is at first false then isActive will change to true. Trying to implement start stop. if isActive is false then isActive will change to true.
-        if(isActive === false){
-            setisActive(true)
-        }
-        if(isActive === true){
-            setisActive(false)
-        }
-        console.log(isActive)
+  useEffect(() => {
+    let intervalId;
+    if (isRunning) {
+      intervalId = setInterval(() => setTime(time + 1), 1000); 
     }
-    const reset = ()=>{ //reset arrow function. isActive will now pause. count is now at 0. Successfully resetting the count.
-        setisActive(false)
-        setCount(0)
-        console.log(count)
-    }
+    return () => clearInterval(intervalId);
+  }, [isRunning, time]);
 
-    useEffect(()=>{
-        let interval = 0
-        if(isActive === true){
-            interval = setInterval(()=>{
-                setCount(count + 1);
-            }, 1000)
-        }
-        return()=>clearInterval(interval);
+  const startAndStop = () => {
+    setIsRunning(!isRunning);
+  };
+  const convertToTime = (ms) => {
+    const seconds = Math.floor(ms / 1000);
+    const minutes = Math.floor(seconds / 60);
+    return `${minutes}:${seconds % 60 < 10 ? '0' : ''}${seconds % 60}`;
+  };
 
-    })
-
-
-
-
-
+  
+  const reset = () => {
+    setTime(0);
+  };
 
   return (
-    <div>
-        <div> 
-            {count}
-        </div>
-    <button onClick={startStop}> 
-    {/* if isActive is true then it will show Pause if isactive is false then it will show start */}
-        {isActive ? "Pause" : "Start"} 
-    </button>
-    <button onClick={reset}>Reset</button>
+    <div className="stopwatch-container">
+      <p className="stopwatch-time">{time}  secondz</p>
+      
+      <div >
+        <button onClick={startAndStop}>
+          {isRunning ? "Stop" : "Start"}
+        </button>
+        <button onClick={reset}>
+          Reset
+        </button>
+      </div>
     </div>
-  )
-}
+  );
+};
 
-export default Stopwatch
+export default Stopwatch;
