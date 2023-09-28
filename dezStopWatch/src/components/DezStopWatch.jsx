@@ -41,7 +41,7 @@ const DezStopWatch = () => {
   return (
     <div>
       <div>
-        <h1>Stopwatch</h1>
+        <h1 className='titleStop'>Stopwatch</h1>
       </div>
       <div className='clock'>
         <label>{convertToTime(lapse)}</label>

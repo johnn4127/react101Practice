@@ -28,7 +28,7 @@ const Stopwatch = () => {
 
   return (
     <div className="stopwatch-container">
-      <p className="stopwatch-time">{time}  secondz</p>
+      <p className="stopwatch-time">{time}  </p>
       
       <div >
         <button onClick={startAndStop}>
