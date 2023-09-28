@@ -44,7 +44,7 @@ const DezStopWatch = () => {
         <h1 className='titleStop'>Stopwatch</h1>
       </div>
       <div className='clock'>
-        <label>{convertToTime(lapse)}</label>
+        <label className='timer'>{convertToTime(lapse)}</label>
       </div>
       <div className='stopWatchButtons'>
         <button onClick={handleRunClick}>{running ? 'Stop' : 'Start'}</button>

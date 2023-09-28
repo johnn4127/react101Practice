@@ -53,3 +53,10 @@ body{
 .titleStop{
   color: rgba(255, 255, 255, 0.87)
 }
+.timer{
+  color: rgba(255, 255, 255, 0.87)
+}
+button{
+  background-color: #1a1a1a;
+  color: #ffffffde;
+}
