@@ -47,3 +47,9 @@
   margin-top: 20px; 
   
 }
+body{
+  background-color: #242424;
+}
+.titleStop{
+  color: rgba(255, 255, 255, 0.87)
+}
