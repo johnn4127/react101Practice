@@ -50,7 +50,7 @@ const FoxForm = () => {
         <Form.Control type="text" placeholder="Name" value={name} onChange={(e)=> setfirstname(e.target.value)} />
       </Form.Group>
 
-      <Form.Group className="mb-4" controlId="formAge">
+      <Form.Group className="mb-4" controlId="formAge"> 
         <Form.Label>Age</Form.Label>
         <Form.Control type="number" value={age} onChange={(e)=> setage(e.target.value)} placeholder="Age" />
       </Form.Group>
