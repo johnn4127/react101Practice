@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -6,7 +6,7 @@ import Card from 'react-bootstrap/Card';
 import Carousel from 'react-bootstrap/Carousel';
 
 
-const PracticeForm = () => {
+const PracticeForm = (props) => {
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [photo, setPhoto] = useState('');
@@ -41,9 +41,7 @@ const PracticeForm = () => {
     
   };
 
-//   useEffect(() => {
-//     fetchFoxImg();
-//   }, []);
+
 
   return (
     <div>
@@ -84,23 +82,8 @@ const PracticeForm = () => {
           Submit
         </Button>
       </Form>
-
-      <Carousel>
-  {userList.map((user, index) => (
-    <Carousel.Item key={index}>
-      <Card style={{ width: "300px" }}>
-        <Card.Img src={user.photo || photo} alt="Movie Poster" />
-        <Card.Body>
-          <Card.Title>{user.firstName} {user.lastName}</Card.Title>
-          <Card.Subtitle className="mb-2 text-muted">
-            {user.firstName} {user.lastName} {user.birthday}
-          </Card.Subtitle>
-        </Card.Body>
-      </Card>
-    </Carousel.Item>
-  ))}
-</Carousel>
 </div>
+
     </div>
   );
 };
