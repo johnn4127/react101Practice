@@ -1,33 +1,28 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import React, {createContext,useContext, useState} from 'react'
 import './App.css'
+import Center from './components/Center'
+import Guard from './components/Guard'
+import Forward from './components/Forward'
+
+
+//App -> Guard-> Pointguard, Shootingguard
+export const PlayerContext = createContext()
 
 function App() {
-  const [count, setCount] = useState(0)
 
+    
+const [team, setTeam] = useState('Denver Nuggets');
+  
   return (
     <>
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+       <PlayerContext.Provider value={team}>
+        {/* Guard, Forward, and Center should all be able to access the value team */}
+      <Guard />
+      <Center/>
+      <Forward/>
+      </PlayerContext.Provider>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
     </>
   )
 }
