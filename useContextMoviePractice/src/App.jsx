@@ -1,34 +1,43 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import React,{useState, useContext,createContext} from 'react'
+import {Routes, Route} from 'react-router-dom'
+import Homepage from './components/Homepage'
+import Movie1 from './components/Movie1'
+import Movie2 from './components/Movie2'
+import Movie3 from './components/Movie3'
+import Movie4 from './components/Movie4'
+import Navbar from './components/Navbar'
 import './App.css'
 
-function App() {
-  const [count, setCount] = useState(0)
+
+export const MovieContext = createContext();
+
+
+
+const App = () => {
+
+  const [rating,setRating]=useState('PG-13')
+  const [genre,setGenre] = useState('action, adventure')
+  
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div>
+      
+      <MovieContext.Provider value={[{rating:rating, genre:genre}]}>
+        <Navbar/>
+      <Routes>
+        
+      <Route path='/' element={<Homepage/>}/>
+      <Route path='/movie1' element={<Movie1/>}/>
+      <Route path='/movie2' element={<Movie2/>}/>
+      <Route path='/movie3' element={<Movie3/>}/>
+      <Route path='/movie4' element={<Movie4/>}/>
+        
+      </Routes>
+     
+      </MovieContext.Provider>
+
+
+    </div>
   )
 }
 
