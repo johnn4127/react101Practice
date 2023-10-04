@@ -2,26 +2,27 @@ import React from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Card from 'react-bootstrap/Card';
 import Carousel from 'react-bootstrap/Carousel';
-import { Link } from 'react-router-dom';
 
-const userList = [
-  {
-    id: 1,
-    firstName: 'John',
-    lastName: 'Doe',
-    birthday: '1990-01-01',
-    photo: 'https://example.com/john.jpg',
-  },
-  // dummy data
-];
+import { useEffect } from 'react';
 
-const Carousel1 = (props) => {
+
+
+
+
+const Carousel1 = ({userList}) => {
+
+
+  useEffect(()=>{
+    console.log(userList)
+  },[userList]) 
+
+  
   return (
     <div>
       <Carousel>
-        {userList.map((user, index) => (
+        {userList && userList.map((user, index) => (
           <Carousel.Item key={index}>
-            <Link to={`/user/${user.id}`}>
+            
               <Card style={{ width: '300px' }}>
                 <Card.Img src={user.photo} alt="User Poster" />
                 <Card.Body>
@@ -31,7 +32,7 @@ const Carousel1 = (props) => {
                   </Card.Subtitle>
                 </Card.Body>
               </Card>
-            </Link>
+           
           </Carousel.Item>
         ))}
       </Carousel>
