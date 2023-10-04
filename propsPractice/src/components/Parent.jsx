@@ -1,0 +1,16 @@
+import React, {useState} from 'react'
+import Child from './child'
+const Parent = () => {
+
+    const [word,setWord]= useState('Parent')
+
+  return (
+    <div>
+        <h1>{word}</h1>
+        <Child
+        changeWord={word =>setWord(word)}/>
+    </div>
+  )
+}
+
+export default Parent
