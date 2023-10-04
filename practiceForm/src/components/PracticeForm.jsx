@@ -2,11 +2,15 @@ import React, { useState } from 'react';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Card from 'react-bootstrap/Card';
-import Carousel from 'react-bootstrap/Carousel';
+import { useHistory } from 'react-router-dom';
+import Carousel1 from './Carousel1';
 
 
-const PracticeForm = (props) => {
+const PracticeForm = () => {
+
+    let history = useHistory()
+
+
   const [firstName, setFirstName] = useState('');
   const [lastName, setLastName] = useState('');
   const [photo, setPhoto] = useState('');
@@ -31,6 +35,8 @@ const PracticeForm = (props) => {
     setLastName(""),
     setBirthday("")
     fetchFoxImg()
+
+    history.push("/carousel1")
   };
 
   const fetchFoxImg = async () => {
@@ -83,7 +89,9 @@ const PracticeForm = (props) => {
         </Button>
       </Form>
 </div>
-
+      
+      <Carousel1 userList={userList}/>
+      
     </div>
   );
 };
