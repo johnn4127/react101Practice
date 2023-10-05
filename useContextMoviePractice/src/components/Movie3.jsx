@@ -10,7 +10,7 @@ const Movie3 = () => {
     return (
         <div>
             <h1>Title: {title}</h1>
-            <h2>map</h2>
+            <img src="https://m.media-amazon.com/images/M/MV5BZWMyYzFjYTYtNTRjYi00OGExLWE2YzgtOGRmYjAxZTU3NzBiXkEyXkFqcGdeQXVyMzQ0MzA0NTM@._V1_FMjpg_UX1000_.jpg" alt="" />
             {movieInfo && movieInfo.map((movieData, index) => (
                 <div key={index}>
                     <p > Rating: {movieData.rating} </p>
