@@ -8,6 +8,7 @@ const Miles = () => {
 
     <div>
         <h1>Miles</h1>
+        <img src="https://assets.telegraphindia.com/telegraph/2023/Jul/1689594244_spiderman-miles.jpg" alt="" />
         <p>Power:{powerInfo}</p>
     </div>
     )

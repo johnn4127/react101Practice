@@ -14,7 +14,8 @@ const Movie1 = () => {
     return (
         <div>
             <h1>Title: {title}</h1>
-            <h2>map</h2>
+            <img src="https://m.media-amazon.com/images/M/MV5BMjMwNDkxMTgzOF5BMl5BanBnXkFtZTgwNTkwNTQ3NjM@._V1_.jpg" alt="" />
+
             <CharacterPowersContext.Provider value={powers}>
             <Gwen />
             <Miles/>
