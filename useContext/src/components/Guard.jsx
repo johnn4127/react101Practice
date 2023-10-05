@@ -1,6 +1,7 @@
 
 import React, {useState, useContext} from 'react';
 import {PlayerContext} from '../App'
+import Pointguard from './Pointguard';
 
 
 
@@ -16,12 +17,13 @@ const Guard = () => {
   return (
     <div>
         
-        <h3>Create a Player</h3>
+        <h3>Guard</h3>
         <p>Team: {team}</p>
         <p>Height: {height}</p>
         <p>Handles: {handles}</p>
         <p>Assists: {assists}</p>
         <p>Dunk: {dunk}</p>
+        <Pointguard/>
     </div>
   )
 }
